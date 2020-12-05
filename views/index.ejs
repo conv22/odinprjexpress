@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <a href='/new'>New message</a>
+    <h1><%= title %></h1>
+    <ul>
+    <% messages.forEach(message => {%>
+      <li>
+        <div class='date'> <sub><%=format(message.added, {addSuffix: true})%> </sub> </div>
+        <div class='title'> <%= message.user %> </div>
+        <%= message.text %>
+      </li>
+    <% }) %>
+  </ul>
+  </body>
+</html>
